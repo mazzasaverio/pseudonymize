@@ -6,6 +6,10 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
 
 ### Fixed
 
+- `LocalONNXPIIBackend` now merges contiguous token predictions into whole entity spans, so
+  multi-word and subword-split names receive a single alias instead of one alias per token.
+- ONNX test artifacts downloaded during testing are now verified against pinned SHA-256
+  checksums.
 - URL credential detection now covers the whole userinfo section when it contains extra `@`
   characters and no longer swallows the URL fragment into sensitive query values.
 - Overlap resolution now ranks URL credentials above emails, so a `user:password@host` userinfo
