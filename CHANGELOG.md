@@ -20,6 +20,9 @@ All notable changes follow Keep a Changelog and Semantic Versioning.
   characters and no longer swallows the URL fragment into sensitive query values.
 - Overlap resolution now ranks URL credentials above emails, so a `user:password@host` userinfo
   can no longer lose its `user:` prefix to an overlapping email match.
+- The `ml` extra now declares `numpy`, which the ONNX backend imports directly, and no longer
+  pulls in the unused `huggingface-hub` dependency.
+- The optional-import guard in the ONNX backend now type-checks under strict mypy.
 
 ## [0.2.0] - 2026-08-21
 
